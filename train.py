@@ -47,7 +47,7 @@ print("Final training error: {:.4f}".format(evals_result["train"]["error"][-1]))
 # Save result to the Domino FS
 DOMINO_USER = os.environ["DOMINO_STARTING_USERNAME"]
 
-filename = DOMINO_USER + "_training_results.txt"
+filename = os.path.join("/mnt", DOMINO_USER + "_training_results.txt")
 
 with open(filename, "w") as text_file:
     text_file.write("Learning rate used: {:.4f}\n".format(lr))
